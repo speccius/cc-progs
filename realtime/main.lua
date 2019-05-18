@@ -5,7 +5,7 @@ args={...}
 function update()
 
 local x,y=http.checkURL(
-"http://raw.github.com/speccius/cc-progs/master/realtime/test")
+"https://raw.github.com/speccius/cc-progs/master/realtime/test")
 
 if not x then print("Repo down?") print(y) else
 
@@ -15,10 +15,10 @@ fs.delete("/real_time")
 fs.makeDir("/real_time")
 end
 
-main=fs.open("/real_time/datetime")
+main=fs.open("/real_time/datetime","w")
 main.write(
 http.get(
-"http://raw.github.com/speccius/cc-progs/master/realtime/main.lua"
+"https://raw.github.com/speccius/cc-progs/master/realtime/main.lua"
 ).readAll())
 main.close()
 end end
